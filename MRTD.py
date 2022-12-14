@@ -17,7 +17,7 @@ mismatch(): This function compares the checkdigit from decode() and checkdigit c
             matches them, if there is a mismatch it outputs which information field did the mismatch happen.
 
 """
-class HardwareScanner():   #Dummy hardware Scanner function 1; giving out two random MRZ data to be used by function 2
+class HardwareScanner():   #Dummy hardware Scanner function 1; giving out random MRZ data to be used by function 2
     # MRZ = "P<LKABLACK<<DOMINIQUE<CORALIE<<<<<<<<<<<<<<<;R724644M28LKA6301307M6801184RZ671583Y<<<<<<6"
     pass
 
@@ -53,28 +53,24 @@ def decode():
     passport_number, birth_date, expiration_date,personal_number,country_code, last_name, given_name,
     document_type, issuing_country,sex)
 
-# ('4', '6', '2', '6', 'W620126G5', '591010', '970730', 'AJ010215I', 'CIV', 'LYNN', 'NEVEAH BRAM', 'P', 'CIV', 'F')
 # print(decode())
 class sampleDatabase():
     # sampleData = {
-    #     "line1": {
-    #         "issuing_country": "LKA",
-    #         "last_name": "BLACK",
-    #         "given_name": "DOMINIQUE CORALIE"
-    #     },
-    #     "line2": {
-    #         "passport_number": "R724644M2",
-    #         "country_code": "LKA",
-    #         "birth_date": "630130",
-    #         "sex": "M",
-    #         "expiration_date": "680118",
-    #         "personal_number": "RZ671583Y"
+    #         "line1": {
+    #             "issuing_country": "LKA",
+    #             "last_name": "BLACK",
+    #             "given_name": "DOMINIQUE CORALIE"
+    #         },
+    #         "line2": {
+    #             "passport_number": "R724644M3",
+    #             "country_code": "LKA",
+    #             "birth_date": "630130",
+    #             "sex": "M",
+    #             "expiration_date": "680118",
+    #             "personal_number": "RZ671583Y"
+    #         }
     #     }
-    # }
     pass
-
-# sampledict = sampleDatabase()
-# print(decode(HardwareScanner()))
 
 def charValue(c):
     if c >= '0' and c <= '9':
@@ -92,11 +88,6 @@ def checkDigit(data):
         sum += product
     cdigit = sum % 10
     return cdigit
-
-
-# checkDigit(data)
-# print(cdigit)
-#L898902C3
 
 def encode():
     dictObj = sampleDatabase()
@@ -120,11 +111,13 @@ def encode():
     finalline2 = str(line2+line2a+line2b)+f"<<<<<<{str(checkDigit(personal_number))}"
     finalline = finalline1+";"+finalline2
     return passport_number,birth_date,expiration_date,personal_number,finalline
+
 # print(encode())
 
 var_dict = {0:'Passport Number', 1:'Birth Date', 2:'Expiration Date', 3:'Personal Number'}
 def mismatch():
     a = True
+    mismatch_fields = []
     for x in range(len(var_dict)):
         digit= decode()[x]
         field = checkDigit(encode()[x])
@@ -132,8 +125,10 @@ def mismatch():
         if(str(digit) != str(field)):
             a = False
             value = (f"mismatch found in {var_dict[x]}")
+            mismatch_fields.append(value)
     if(a==True):
         value = ("No mismatch found!")
-    return value
+        mismatch_fields.append(value)
+    return mismatch_fields
         
-# mismatch(decode()[0],checkDigit(encode()[0]))
+# print(mismatch())
