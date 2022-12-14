@@ -154,14 +154,14 @@ class TestMRTD(unittest.TestCase):
     # Test case 9: To kill a mutant, Added this new test case, which tests mismatch in passport number and birthdate
     @patch('MRTD.HardwareScanner',side_effect = MockResponse4)
     @patch('MRTD.sampleDatabase',side_effect = MockResponse4)
-    def test_mismatch1(self, mock_obj,mock_obj2):
+    def test_mismatch2(self, mock_obj,mock_obj2):
         self.assertEqual(mismatch(),['mismatch found in Passport Number', 'mismatch found in Birth Date'])
         
     # Test case 10: To kill a mutant, added this test case to cover checkDigit function for checking passport number check digit
     def test_checkDigit(self):
         self.assertEqual(checkDigit("V008493B6"),4)
     
-    # Test case 10: To kill a mutant, added this test case to cover checkDigit function for checking birth date check digit
+    # Test case 11: To kill a mutant, added this test case to cover checkDigit function for checking birth date check digit
     def test_checkDigit1(self):
         self.assertEqual(checkDigit("591010"),6)
     
