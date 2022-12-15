@@ -17,3 +17,4 @@ The Files Submitted Here Include:
 4. Main Function file of the project is : MRTD.py
 5. Main Test Function file of the project is : MTTDTest.py
 6. Source files for performance testing are: decode.py and encode.py
+7. All 4 Parts Project Reports are numbered accordingly and uploaded here.
