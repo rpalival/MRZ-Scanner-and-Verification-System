@@ -11,8 +11,10 @@ jobs:
       - run: 
           command: |
             pip install pytest
+            pip install unittest
+            python3 -m unittest discover -v
             pip install requests
-            pytest --junitxml=test-results/junit.xml MTTDtest.py
+            unittest --junitxml=test-results/junit.xml MTTDtest.py
       - store_test_results:
           path: test-results
           
