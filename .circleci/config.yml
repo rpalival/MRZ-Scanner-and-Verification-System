@@ -12,11 +12,11 @@ jobs:
           command: |
             pip install pytest
             pip install requests
-            pytest --junitxml=test-results/junit.xml TestGithubApi4a.py
+            pytest --junitxml=test-results/junit.xml MTTDtest.py
       - store_test_results:
           path: test-results
           
 workflows:
-  testing_GithubApi_04a:
+  testing_MTTD.py:
     jobs:
       - build-and-test 
