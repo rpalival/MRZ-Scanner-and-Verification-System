@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           command: |
-            python3 -m unittest MTTDtest.py -v
+            python3 -m unittest 'MTTDtest.py' -v
           name: Run Tests
       - store_test_results:
           path: test-results
