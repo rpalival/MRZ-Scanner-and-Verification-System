@@ -1,5 +1,5 @@
 # SSW567A-Final-Project-Group-9
-[![rpalival](https://circleci.com/gh/rpalival/SSW567A-Final-Project-Group-9.svg?style=svg&circle-token=fab963459f0aceb183b3920fff6c29440fe0f8c9)](https://app.circleci.com/pipelines/github/<rpalival>/<SSW567A-Final-Project-Group-9>?branch=main&filter=all)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main)
 Final Project Work for SSW 567-A Class
 
 This Project Repo is made for our final project submission from Group-9
