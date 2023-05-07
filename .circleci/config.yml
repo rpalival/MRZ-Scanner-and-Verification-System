@@ -8,17 +8,17 @@ jobs:
       - checkout
       - run: python3 MRTD.py
   test:
-  	working_directory: ~/circleci-python
-	docker:
-	  - image: cimg/python:3.11.0
-	steps:
-	  - checkout
-	  - run: python3 MTTDtest.py
-	  
+  working_directory: ~/circleci-python
+  docker:
+    - image: cimg/python:3.11.0
+  steps:
+    - checkout
+    - run: python3 MTTDtest.py
+
 workflows:
   build_and_test:
-  jobs:
-  	- build
-	- test:
-		requires:
-		  - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
