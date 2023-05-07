@@ -1,7 +1,8 @@
 # SSW567A-Final-Project-Group-9
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main)
 
-
+[![Code Coverage](./coverageReport/coverage.svg)](./coverageReport/index.html)
+    
 Final Project Work for SSW 567-A Class
 
 This Project Repo is made for our final project submission from Group-9
