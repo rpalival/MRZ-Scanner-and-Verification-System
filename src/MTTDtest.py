@@ -175,7 +175,7 @@ class TestMRTD(unittest.TestCase):
 
     # Test case 14: To kill a mutant, added this test case to cover charValue function as well with different character number
     def test_charValue2(self):
-        self.assertEqual(charValue("4"),5)
+        self.assertEqual(charValue("4"),4)
 
 if __name__ == '__main__':
     print('Running unit tests')
