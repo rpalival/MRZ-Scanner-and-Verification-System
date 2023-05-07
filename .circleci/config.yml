@@ -1,14 +1,12 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/circleci-python
     docker:
       - image: cimg/python:3.11.0
     steps:
       - checkout
       - run: python3 MRTD.py
   test:
-  working_directory: ~/circleci-python
   docker:
     - image: cimg/python:3.11.0
   steps:
