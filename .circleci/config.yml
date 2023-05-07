@@ -10,16 +10,16 @@ jobs:
       - checkout
       - run:
           command: |
-            pip install requests
+            pip install .
           name: Install Dependencies
       - run:
           command: |
-            python -m unittest --junitxml=test-results/junit.xml MTTDtest.py
+            python -m unittest discover -s . -p '*_test.py' -v
           name: Run Tests
       - store_test_results:
           path: test-results
           
 workflows:
-  testing_finalProject:
+  testing_MRTD:
     jobs:
       - build-and-test
