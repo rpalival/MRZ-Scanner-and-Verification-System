@@ -1,22 +1,25 @@
 version: 2.1
+orbs: 
+  python: circleci/python@2.1.1
+
 jobs:
-  build:
+  build-and-test:
     docker:
-      - image: cimg/python:3.11.0
+      - image: cimg/python:3.10.2
     steps:
       - checkout
-      - run: python3 MRTD.py
-  test:
-  docker:
-    - image: cimg/python:3.11.0
-  steps:
-    - checkout
-    - run: python3 MTTDtest.py
-
+      - run:
+          command: |
+            pip install requests
+          name: Install Dependencies
+      - run:
+          command: |
+            python -m unittest discover -s . -p 'MRTD.py' -v
+          name: Run Tests
+      - store_test_results:
+          path: test-results
+          
 workflows:
-  build_and_test:
+  testing_finalProject:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - build-and-test
