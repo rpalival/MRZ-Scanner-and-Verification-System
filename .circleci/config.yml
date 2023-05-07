@@ -1,24 +1,24 @@
 version: 2.1
-orbs: 
-    python: circleci/python@2.1.1
-
 jobs:
-  build-and-test:
+  build:
+    working_directory: ~/circleci-python
     docker:
-      - image: cimg/python:3.10.2
+      - image: cimg/python:3.11.0
     steps:
       - checkout
-      - run: 
-          command: |
-            pip install pytest
-            pip install unittest
-            python3 -m unittest discover -v
-            pip install requests
-            unittest --junitxml=test-results/junit.xml MTTDtest.py
-      - store_test_results:
-          path: test-results
-          
+      - run: python3 MRTD.py
+  test:
+  	working_directory: ~/circleci-python
+	docker:
+	  - image: cimg/python:3.11.0
+	steps:
+	  - checkout
+	  - run: python3 MTTDtest.py
+	  
 workflows:
-  testing_MTTD.py:
-    jobs:
-      - build-and-test 
+  build_and_test:
+  jobs:
+  	- build
+	- test:
+		requires:
+		  - build
