@@ -1,5 +1,5 @@
 # SSW567A-Final-Project-Group-9
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/rpalival/SSW567A-Final-Project-Group-9/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rpalival/MRZ-Scanner-and-Verification-System/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/rpalival/MRZ-Scanner-and-Verification-System/tree/main)
 
 [![Code Coverage](./coverageReport/coverage.svg)](./coverageReport/index.html)
     
